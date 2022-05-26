@@ -2,10 +2,6 @@
 
 ![winbar2](sources/winbar2.png)
 
-
-
-![winbar](sources/winbar.png)
-
 [Reference ChristianChiarulli/nvim](https://github.com/ChristianChiarulli/nvim)
 
 ## Installation

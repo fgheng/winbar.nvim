@@ -26,7 +26,7 @@ local winbar_mode = function()
 end
 
 local winbar_file = function()
-    local file_path = vim.fn.expand('%:~:.')
+    local file_path = vim.fn.expand('%:~:.:h')
     local filename = vim.fn.expand('%:t')
     local file_type = vim.fn.expand('%:e')
     local value = ''

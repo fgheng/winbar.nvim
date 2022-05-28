@@ -65,3 +65,4 @@ require('winbar').setup({
 
 - [ ] Mode support
 - [ ] Monitor whether the file is read-only
+- [ ] Click support while neovim support click

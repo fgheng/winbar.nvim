@@ -9,7 +9,7 @@ local hl_winbar_file = 'WinBarFile'
 local hl_winbar_symbols = 'WinBarSymbols'
 local hl_winbar_file_icon = 'WinBarFileIcon'
 
-local file_icon = ''
+local file_icon = ''
 local file_icon_color = ''
 
 local winbar_mode = function()

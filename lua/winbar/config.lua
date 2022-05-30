@@ -13,6 +13,7 @@ config.options = {
     },
 
     icons = {
+        file_icon_default = '',
         seperator = '>',
         editor_state = '●',
         lock_icon = '',

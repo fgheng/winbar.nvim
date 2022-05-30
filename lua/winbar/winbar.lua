@@ -9,9 +9,6 @@ local hl_winbar_file = 'WinBarFile'
 local hl_winbar_symbols = 'WinBarSymbols'
 local hl_winbar_file_icon = 'WinBarFileIcon'
 
-local file_icon = ''
-local file_icon_color = ''
-
 local winbar_mode = function()
     -- if not f.isempty(value) and f.get_buf_option('mod') then
     --     local mod = '%#LineNr#' .. opts.editor_state .. '%*'
@@ -30,6 +27,8 @@ local winbar_file = function()
     local filename = vim.fn.expand('%:t')
     local file_type = vim.fn.expand('%:e')
     local value = ''
+    local file_icon = ''
+    local file_icon_color = ''
 
     file_path = file_path:gsub('^%.', '')
     file_path = file_path:gsub('^%/', '')
@@ -45,6 +44,11 @@ local winbar_file = function()
         if status_web_devicons_ok then
             file_icon, file_icon_color = web_devicons.get_icon_color(filename, file_type, { default = default })
         end
+
+        if not file_icon then
+            file_icon = opts.icons.file_icon_default
+        end
+
         vim.api.nvim_set_hl(0, hl_winbar_file_icon, { fg = file_icon_color })
         file_icon = '%#' .. hl_winbar_file_icon .. '#' .. file_icon .. ' %*'
 

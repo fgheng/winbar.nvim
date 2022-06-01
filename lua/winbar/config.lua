@@ -38,10 +38,13 @@ config.options = {
 
 function config.set_options(opts)
     opts = opts or {}
-
-    for opt, _ in pairs(opts) do
-        if (config.options[opt] ~= nil) then
-            config.options[opt] = opts[opt]
+    for key, value in pairs(opts) do
+        if config.options[key] ~= nil then
+            if type(config.options[key]) == 'table' then
+                config.options[key] = vim.tbl_extend('force', config.options[key], value)
+            else
+                config.options[key] = value
+            end
         end
     end
 end

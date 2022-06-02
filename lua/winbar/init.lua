@@ -1,9 +1,9 @@
-local opts = require('winbar.config').options
+local config = require('winbar.config')
 
 local M = {}
 
-function M.setup(custom_opts)
-    require('winbar.config').set_options(custom_opts)
+function M.setup(opts)
+    config.set_options(opts)
     local winbar = require('winbar.winbar')
 
     winbar.init()

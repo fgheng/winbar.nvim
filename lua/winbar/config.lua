@@ -1,7 +1,7 @@
 local M = {}
 
 M.defaults = {
-    enabled = true,
+    enabled = false,
 
     show_file_path = true,
     show_symbols = true,

@@ -71,7 +71,8 @@ local winbar_file = function()
 
 end
 
-local _, gps = pcall(require, 'nvim-gps')
+-- local _, gps = pcall(require, 'nvim-gps')
+local _, gps = pcall(require, 'nvim-navic')
 local winbar_gps = function()
     local status_ok, gps_location = pcall(gps.get_location, {})
     local value = ''

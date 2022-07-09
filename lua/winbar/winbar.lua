@@ -43,6 +43,7 @@ local winbar_file = function()
 
         if status_web_devicons_ok then
             file_icon, file_icon_color = web_devicons.get_icon_color(filename, file_type, { default = default })
+            hl_winbar_file_icon = "DevIcon" .. file_type:sub(1,1):upper()..file_type:sub(2)
         end
 
         if not file_icon then

@@ -28,7 +28,6 @@ local winbar_file = function()
     local file_type = vim.fn.expand('%:e')
     local value = ''
     local file_icon = ''
-    local file_icon_color = ''
 
     file_path = file_path:gsub('^%.', '')
     file_path = file_path:gsub('^%/', '')
@@ -42,15 +41,14 @@ local winbar_file = function()
         end
 
         if status_web_devicons_ok then
-            file_icon, file_icon_color = web_devicons.get_icon_color(filename, file_type, { default = default })
-            hl_winbar_file_icon = "DevIcon" .. file_type:sub(1,1):upper()..file_type:sub(2)
+            file_icon = web_devicons.get_icon(filename, file_type, { default = default })
+            hl_winbar_file_icon = "DevIcon" .. file_type
         end
 
         if not file_icon then
             file_icon = opts.icons.file_icon_default
         end
 
-        vim.api.nvim_set_hl(0, hl_winbar_file_icon, { fg = file_icon_color })
         file_icon = '%#' .. hl_winbar_file_icon .. '#' .. file_icon .. ' %*'
 
         value = ' '

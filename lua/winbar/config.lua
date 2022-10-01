@@ -14,7 +14,7 @@ M.defaults = {
 
     icons = {
         file_icon_default = '',
-        seperator = '>',
+        separator = '>',
         editor_state = '●',
         lock_icon = '',
     },

@@ -59,7 +59,7 @@ local winbar_file = function()
             end)
 
             for i = 1, #file_path_list do
-                value = value .. '%#' .. hl_winbar_path .. '#' .. file_path_list[i] .. ' ' .. opts.icons.seperator .. ' %*'
+                value = value .. '%#' .. hl_winbar_path .. '#' .. file_path_list[i] .. ' ' .. opts.icons.separator .. ' %*'
             end
         end
         value = value .. file_icon
@@ -70,13 +70,13 @@ local winbar_file = function()
 
 end
 
-local _, gps = pcall(require, 'nvim-navic')
 local winbar_gps = function()
+    local _, gps = pcall(require, 'nvim-navic')
     local status_ok, gps_location = pcall(gps.get_location, {})
     local value = ''
 
     if status_ok and gps.is_available() and gps_location ~= 'error' and not f.isempty(gps_location) then
-        value = '%#' .. hl_winbar_symbols .. '# ' .. opts.icons.seperator .. ' %*'
+        value = '%#' .. hl_winbar_symbols .. '# ' .. opts.icons.separator .. ' %*'
         value = value .. '%#' .. hl_winbar_symbols .. '#'  .. gps_location .. '%*'
     end
 

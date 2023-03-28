@@ -5,6 +5,7 @@ M.defaults = {
 
     show_file_path = true,
     show_symbols = true,
+    right_align = false,
 
     colors = {
         path = '',

@@ -119,6 +119,10 @@ M.show_winbar = function()
 
     local value = winbar_file()
 
+    if opts.right_align then
+        value = "%=" .. value
+    end
+
     if opts.show_symbols then
         if not f.isempty(value) then
             local gps_value = winbar_gps()
